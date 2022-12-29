@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+    color:white;
+}
+.redondear{
+    border-radius: 16px;
+}
+.w-40{
+    width: 40%;
+}
+@media screen and (max-width: 720px){
+    #login{
+        width: 90%;
+    }
+}
