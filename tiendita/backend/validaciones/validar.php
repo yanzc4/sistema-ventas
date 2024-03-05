@@ -1,6 +1,6 @@
 <?php
 
-include('db.php');
+include('../config/db.php');
 $con=conectar();
 
 $USUARIO=$_POST['usuario'];
@@ -13,10 +13,11 @@ $resultado= mysqli_query($con, $consulta);
 $filas=mysqli_num_rows($resultado);
 
 if($filas){
-    header("location: inicio.php");
+    //dirigirse a la pagina de inicio
+    header("location: ../inicio.php");
 
 }else{
-    include("index.php");
+    include('.../index.php')
     ?>
     <h1>ERROR DE AUTENTIFICACION</h1>
     <?php

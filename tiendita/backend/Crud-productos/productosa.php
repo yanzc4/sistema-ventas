@@ -1,13 +1,3 @@
-<?php
-include('db.php');
-$con = conectar();
-
-$id = $_GET['id'];
-$sql = "select * from productos where id='$id'";
-$query = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($query);
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -18,7 +8,7 @@ $row = mysqli_fetch_array($query);
     <title>Actualizar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="productoss.css">
+    <link rel="stylesheet" href="/assets/css/productoss.css">
     <style>
         .w-80 {
             width: 80%;
@@ -29,22 +19,18 @@ $row = mysqli_fetch_array($query);
 <body>
     <center>
         <div class="container w-80 bg-dark redondear position-absolute top-50 start-50 translate-middle">
-            <form action="update.php" method="post">
-                <div class="mt-3 text-start">
-                    <h3 class="text-center">Actualizar</h3>
-                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-                </div>
-                <div class="mt-4 text-start">
+            <form action="insertar.php" method="post">
+                <div class="mt-5 text-start">
                     <label class="for-label">Nombre</label>
-                    <input type="text" class="form-control" name="producto" placeholder="ingrese producto" value="<?php echo $row['nombre'] ?>">
+                    <input type="text" class="form-control" name="producto" placeholder="ingrese producto">
                 </div>
                 <div class="mt-2 text-start">
                     <label class="for-label">Precio</label>
-                    <input type="text" class="form-control" name="precio" placeholder="12.4" value="<?php echo $row['precio'] ?>">
+                    <input type="text" class="form-control" name="precio" placeholder="12.4">
                 </div>
                 <div class="mt-2 text-start mb-3">
                     <div class="d-grid mt-4">
-                        <input type="submit" name="insertar" class="btn btn-success redondear mb-4" value="Actualizar Producto">
+                        <input type="submit" name="insertar" class="btn btn-primary redondear mb-4" value="Agregar Producto">
                     </div>
             </form>
         </div>
